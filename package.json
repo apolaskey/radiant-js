@@ -1,12 +1,11 @@
 {
   "name": "radiant-js",
-  "productName": "radiant-js",
+  "productName": "Radiant Engine",
   "version": "0.0.1",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "description": "Javascript based game engine",
+  "main": "src/app.js",
   "scripts": {
     "start": "electron-forge start",
-    "dev-start": "",
     "build": "electron-forge package",
     "deploy": "electron-forge publish",
     "lint": "eslint src"
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
     "babel-preset-env": "^1.2.1",
     "babel-preset-react": "^6.23.0",
     "electron-prebuilt-compile": "1.6.2",

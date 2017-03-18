@@ -4,18 +4,15 @@
       "application/javascript": {
         "presets": [
           [
-            "env",
-            {
-              "targets": {
-                "electron": "1.6.2"
-              }
+            "env", {
+                "targets": { "electron": "1.6.2" }
             }
           ],
           "react"
         ],
-        "plugins": [
-          "transform-async-to-generator"
-        ],
+        "plugins": [ "transform-async-to-generator",
+            ["transform-react-jsx", { "pragma": "m" }]
+         ],
         "sourceMaps": "inline"
       }
     },
@@ -23,18 +20,15 @@
       "application/javascript": {
         "presets": [
           [
-            "env",
-            {
-              "targets": {
-                "electron": "1.6.2"
-              }
+            "env", {
+              "targets": { "electron": "1.6.2" }
             }
           ],
           "react"
         ],
-        "plugins": [
-          "transform-async-to-generator"
-        ],
+        "plugins": [ "transform-async-to-generator",
+                ["transform-react-jsx", { "pragma": "m" }]
+            ],
         "sourceMaps": "none"
       }
     }
