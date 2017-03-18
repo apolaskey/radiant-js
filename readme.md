@@ -1,20 +1,32 @@
-radiant-js
+Radiant.JS
+=============
+Pet project with just messing around in Electron and JS to deliver a rough game engine proof of concept.
+
+Feature List
 ----
+- [x] Electron Forge Installation and Setup
+- [x] Mithril Framework w/JSX support
+- [ ] WebGL 2.0 Mithril Component
+- [ ] Assimp Content Loader
+- [ ] WebAudio Component
 
-developing
+
+Developing
+=============
+The focus is on a no-bs setup and installation; outside of the first time global components the other commands should be repeatable and work on a fresh clone of the repo. 
+
+First Time Setup
 ----
-Install tools (Should only need to run once)
+Electron Setup :: ``npm install -g electron``
 
-``npm install``
+Electron Forge CLI :: ``npm install -g electron-forge``
 
-Start application
+Project Setup :: ``npm install``
 
-``npm start``
+Build Scripts
+----
+Start application from source :: ``npm start``
 
-Build application
+Build application :: ``npm run-script build``
 
-``npm run-script build``
-
-Deploy application
-
-``npm run-script deploy``
+Deploy application :: ``npm run-script deploy``

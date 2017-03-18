@@ -1,5 +1,3 @@
-import m from 'mithril';
-
 const loaderComponent = {
     view: function () {
         return (
