@@ -1,12 +1,14 @@
 'use strict';
 
-import RadiantController from "../controllers/RadiantController";
-import RadiantView from "../views/RadiantView";
-
 export default class RadiantComponent {
-    constructor(controller: RadiantController, view: RadiantView) {
-      this._controller = controller;
-      this._view = view;
+
+    constructor(controller) {
+        if(new.target === RadiantComponent) {
+            throw 'Cannot construct Abstract instances directly!'
+        }
+
+        if(controller === undefined) throw 'Controller is either unset or undefined!';
+        this._controller = controller;
     }
 
     /**
@@ -14,15 +16,7 @@ export default class RadiantComponent {
      * @returns {*}
      */
     get view() {
-        return this._view();
-    }
-
-    /**
-     * Retrieves the set controller
-     * @returns {*}
-     */
-    get controller() {
-        return this._controller;
+        throw `RadiantComponent[${this.constructor.name}]: view() is not implemented!`;
     }
 
 };

@@ -14,4 +14,4 @@ const loaderComponent = {
 
 
 
-export { loaderComponent as BasicLoader }
+export { loaderComponent as loader }
