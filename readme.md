@@ -3,7 +3,7 @@
 [![Dependencies](https://david-dm.org/apolaskey/radiant-js.svg)](https://david-dm.org/apolaskey/radiant-js#info=dependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/dev-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=devDependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/peer-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=peerDependenciess)
-[![Known Vulnerabilities](https://snyk.io/test/github/apolaskey/radiant-js/badge.svg)](https://snyk.io/test/github/inversify/InversifyJS)
+[![Known Vulnerabilities](https://snyk.io/test/github/apolaskey/radiant-js/badge.svg)](https://snyk.io/test/github/apolaskey/radiant-js)
 
 
 # Motivation
