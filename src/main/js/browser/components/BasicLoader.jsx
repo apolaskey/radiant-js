@@ -1,3 +1,6 @@
+'use strict';
+
+
 const loaderComponent = {
     view: function () {
         return (
@@ -9,4 +12,6 @@ const loaderComponent = {
     }
 };
 
-export { loaderComponent as LoaderComponent }
+
+
+export { loaderComponent as BasicLoader }

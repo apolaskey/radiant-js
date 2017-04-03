@@ -1,25 +1,31 @@
 import { app, BrowserWindow } from 'electron';
 import { enableLiveReload } from 'electron-compile';
+import * as dotenv from 'dotenv'; dotenv.config();
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 const createWindow = () => {
-    enableLiveReload();
+    // Must be called first
+    if(process.env.NODE_ENV === 'development') {
+        enableLiveReload();
+    }
+
   // Create the browser window.
     mainWindow = new BrowserWindow({
       width: 1280,
       height: 720,
     });
 
-    // enable dev-compile
+    // Quick-hook into devtools; has to be called after the window is setup sadly
+    if(process.env.NODE_ENV === 'development') {
+        mainWindow.webContents.openDevTools();
+    }
 
-
-    // Load up the index.html for the app (Putting the GUI elements for the "Electron" components in renderer)
-    mainWindow.loadURL(`file://${__dirname}/renderer/index.html`);
-
-    mainWindow.webContents.openDevTools();
+    // Load up just enough HTML to get things started; JSX from here on
+    mainWindow.loadURL(`file://${__dirname}/../html/index.html`);
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {
@@ -51,6 +57,3 @@ app.on('activate', () => {
       createWindow();
     }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.

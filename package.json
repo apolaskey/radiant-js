@@ -3,7 +3,7 @@
   "productName": "Radiant Engine",
   "version": "0.0.1",
   "description": "Javascript based game engine",
-  "main": "src/app.js",
+  "main": "src/main/js/Application.js",
   "scripts": {
     "start": "electron-forge start",
     "build": "electron-forge package",
@@ -20,19 +20,23 @@
     "forge": "build-configs/forge.config.js"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "electron-compile": "^6.1.3",
+    "inversify": "^3.3.0",
+    "inversify-vanillajs-helpers": "^2.0.0",
     "mithril": "^1.0.1"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-react-jsx": "^6.23.0",
-    "babel-preset-env": "^1.2.1",
+    "babel-preset-env": "1.2.1",
     "babel-preset-react": "^6.23.0",
     "electron-prebuilt-compile": "1.6.2",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.10.0"
+    "eslint-plugin-react": "^6.10.0",
+    "spectron": "^3.6.0"
   }
 }

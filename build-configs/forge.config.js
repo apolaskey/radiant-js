@@ -1,25 +1,25 @@
 module.exports = {
-    "make_targets": {
-        "win32": ["squirrel"],
-        "darwin": ["zip"],
-        "linux": ["deb","rpm"]
+    make_targets: {
+        win32: ["squirrel"],
+        darwin: ["zip"],
+        linux: ["deb","rpm"]
     },
-    "electronPackagerConfig": {
-        "asar": false,
-        "ignore": [".idea", "\/build-configs", ".iml", ".compilerc", ".eslintrc", ".gitignore", "readme.md"]
+    electronPackagerConfig: {
+        asar: false,
+        ignore: [".idea", "\/build-configs", ".iml", ".eslintrc", ".gitignore", "readme.md"]
     },
-    "electronWinstallerConfig": {
-        "name": "radiant_js",
-        "loadingGif": ""
+    electronWinstallerConfig: {
+        name: "radiant-js",
+        loadingGif: ""
     },
-    "electronInstallerDebian": {},
-    "electronInstallerRedhat": {},
-    "github_repository": {
-        "owner": "",
-        "name": ""
+    electronInstallerDebian: {},
+    electronInstallerRedhat: {},
+    github_repository: {
+        owner: "apolaskey",
+        name: "radiant-js"
     },
-    "windowsStoreConfig": {
-        "packageName": "",
-        "name": "radiantjs"
+    windowsStoreConfig: {
+        packageName: "radiant-js",
+        name: "Radiant Engine"
     }
 };
