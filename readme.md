@@ -18,7 +18,9 @@ Completed / Planned Feature List
 - [x] Babel w/ES6 + 7 support
 - [ ] Inversify VanillaJS support (IoC container)
 - [ ] Spectron (Electron Functional Testing)
-- [ ] Ava (Concurrent Test Runner)
+- [x] Ava (Concurrent Test Runner)
+- [x] Windows Releases Automated (Appveyor CI)
+- [x] Unix (Linux / OSX) Releases Automated (Travis CI)
 
 
 Developing
