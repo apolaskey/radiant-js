@@ -1,10 +1,12 @@
 # Radiant.JS
 
+[![Gitter](https://badges.gitter.im/apolaskey/radiant-js.svg)](https://gitter.im/apolaskey/radiant-js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Dependencies](https://david-dm.org/apolaskey/radiant-js.svg)](https://david-dm.org/apolaskey/radiant-js#info=dependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/dev-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=devDependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/peer-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=peerDependenciess)
 [![Known Vulnerabilities](https://snyk.io/test/github/apolaskey/radiant-js/badge.svg)](https://snyk.io/test/github/apolaskey/radiant-js)
-
+[![Unix Status](https://travis-ci.org/apolaskey/radiant-js.svg?branch=master)](https://travis-ci.org/apolaskey/radiant-js)
+[![Windows Status](https://ci.appveyor.com/api/projects/status/4fnobuo3n4adrkit?svg=true&retina=true&branch=master)](https://ci.appveyor.com/project/AndrewPolaskey/radiant-js)
 
 # Motivation
 To create a JS based game engine using modern practices and technologies
@@ -12,7 +14,7 @@ To create a JS based game engine using modern practices and technologies
 Completed / Planned Feature List
 ----
 - [x] Electron Forge Installation and Setup
-- [x] Mithril Framework w/JSX support
+- [x] Mithril Framework w/JSX support 
 - [x] Babel w/ES6 + 7 support
 - [ ] Inversify VanillaJS support (IoC container)
 - [ ] Spectron (Electron Functional Testing)
@@ -45,6 +47,23 @@ Start application from source :: ``npm start``
 Build application :: ``npm run-script build``
 
 Deploy application :: ``npm run-script deploy``
+
+Patterns and Practices
+----
+
+All test scripts are to go to ``src/test/js`` and be suffixed with ``.test.js`` ie. ``FooBar.test.js``
+
+Anything related to UI for the application goes into ``src/main/**/browser``
+
+Anything related to just general purpose work goes into ``src/main/**/framework``
+
+Branching / Merging is Gitflow with two defined core branches
+
+``master`` :: Stable Release (Build that passed everything)
+
+``stable`` :: Nightly Release (Build that passed automated tests)
+
+``latest`` :: Unstable Release (Purely staged work; might work, might not)
 
 # Know Issues
 Issues with latest Babel-Env plugin, 1.3.2 appears to be causing problems, forced to older version until bug is fixed
