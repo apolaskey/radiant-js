@@ -4,14 +4,14 @@
       <meta charset="utf-8">
       <title>Radiant Engine</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" type="text/css" href="../css/shell.scss"/>
+      <link rel="stylesheet" type="text/css" href="css/shell.scss"/>
       <script>
           // This will grant us access to the template engine globally and ensure it can't be manipulated
           const m = require('mithril');
+          import initializeRoutes from "./renderer/routes"; initializeRoutes();
       </script>
   </head>
   <body>
     <!-- Nothing else required here -->
   </body>
-  <script src="../js/browser/Index.js"></script>
 </html>

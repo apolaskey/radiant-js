@@ -25,7 +25,7 @@ const createWindow = () => {
     }
 
     // Load up just enough HTML to get things started; JSX from here on
-    mainWindow.loadURL(`file://${__dirname}/../html/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {
