@@ -1,8 +1,8 @@
 'use strict';
+import RadiantView from "./RadiantView";
+import {Injector} from "../../main/bindings/Injector";
 
-import BaseView from 'RadiantView';
-
-export default class HomeView extends BaseView {
+export default class HomeView extends RadiantView {
     render() {
         return (
             <div>Hello world!</div>

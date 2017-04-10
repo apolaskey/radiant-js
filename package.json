@@ -9,7 +9,7 @@
     "build": "electron-forge package",
     "deploy": "electron-forge publish",
     "lint": "eslint src",
-    "test": "ava src/test/js/**/*.test.js"
+    "test": "ava tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "inversify": "^3.3.0",
     "inversify-vanillajs-helpers": "^2.0.0",
     "mithril": "^1.0.1",
+    "reflect-metadata": "^0.1.10",
     "winston": "^2.3.1"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ To create a JS based game engine using modern practices and technologies
 - [x] Electron Forge Installation and Setup
 - [x] Mithril Framework w/JSX support 
 - [x] Babel w/ES6 + 7 support
-- [ ] Inversify VanillaJS support (IoC container)
+- [x] Inversify VanillaJS support (IoC container)
 - [ ] Spectron (Electron Functional Testing)
 - [x] Ava (Concurrent Test Runner)
 - [x] Windows Releases Automated (Appveyor CI)
@@ -81,3 +81,6 @@ Issues with latest Babel-Env plugin, 1.3.2 appears to be causing problems, force
 Electron Forge appears to not be passing electron-packager config details down correctly
 
 ``No Known resolution to this sadly :(``
+
+Warning like: ``MaxListenersExceededWarning: Possible EventEmitter memory leak detected. `` is displayed
+* To fix the above issue update NPM to ``>= 4.4.4`` can be done by doing ``npm update -g npm``
