@@ -5,7 +5,7 @@ module.exports = {
         linux: ["deb","rpm"]
     },
     electronPackagerConfig: {
-        asar: false,
+        asar: true,
         ignore: [".idea", "\/build-configs", ".iml", ".eslintrc", ".gitignore", "readme.md"]
     },
     electronWinstallerConfig: {

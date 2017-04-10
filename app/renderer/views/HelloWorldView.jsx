@@ -1,8 +1,7 @@
 'use strict';
+import RadiantView from "./RadiantView";
 
-import BaseView from 'RadiantView';
-
-export default class HomeView extends BaseView {
+export default class HelloWorldView extends RadiantView {
     render() {
         return (
             <div>Hello world!</div>

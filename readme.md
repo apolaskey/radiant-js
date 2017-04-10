@@ -11,24 +11,23 @@
 # Motivation
 To create a JS based game engine using modern practices and technologies
 
-Completed / Planned Feature List
-----
+# Completed / Planned Feature List
 - [x] Electron Forge Installation and Setup
 - [x] Mithril Framework w/JSX support 
 - [x] Babel w/ES6 + 7 support
-- [ ] Inversify VanillaJS support (IoC container)
+- [x] Inversify VanillaJS support (IoC container)
 - [ ] Spectron (Electron Functional Testing)
 - [x] Ava (Concurrent Test Runner)
 - [x] Windows Releases Automated (Appveyor CI)
 - [x] Unix (Linux / OSX) Releases Automated (Travis CI)
+- [ ] Yeoman Scaffolding Support (On Hold)
+- [x] Winston Logger Support
 
 
-Developing
-=============
+## Developing
 The below should over a no bulshit setup experience if followed; otherwise open an issue and let me know what you encountered.
 
-First Time Setup
-----
+### First Time Setup
 
 The below are global tools that must be installed to build / package this application
 
@@ -42,32 +41,37 @@ The below are global tools that must be installed to build / package this applic
 
 Project Setup :: ``npm install``
 
-Build Scripts
-----
+### Build Scripts
 Start application from source :: ``npm start``
 
 Build application :: ``npm run-script build``
 
 Deploy application :: ``npm run-script deploy``
 
-Patterns and Practices
-----
+## Patterns and Practices
+Below are the basic towards how the project is setup and in general just how things work.
 
-All test scripts are to go to ``src/test/js`` and be suffixed with ``.test.js`` ie. ``FooBar.test.js``
+### Project Directory Structure Overview
 
-Anything related to UI for the application goes into ``src/main/**/browser``
+All test scripts are to go to ``tests/**`` and be suffixed with ``.test.js`` ie. ``FooBar.test.js``
 
-Anything related to just general purpose work goes into ``src/main/**/framework``
+Anything related to UI for the application goes into ``app/renderer/**``
+
+Anything related to just general purpose work goes into ``app/main/**``
 
 Branching / Merging is Gitflow with two defined core branches
 
-``master`` :: Stable Release (Build that passed everything)
+* ``master`` :: Stable Release (Build that passed everything)
 
-``stable`` :: Nightly Release (Build that passed automated tests)
+* ``stable`` :: Nightly Release (Build that passed automated tests)
 
-``latest`` :: Unstable Release (Purely staged work; might work, might not)
+* ``latest`` :: Unstable Release (Purely staged work; might work, might not)
 
-# Know Issues
+Application "Main" is at ``app/main.js``
+
+Application routing is configured at ``app/renderer/routes.js``
+
+# Known Issues
 Issues with latest Babel-Env plugin, 1.3.2 appears to be causing problems, forced to older version until bug is fixed
 
 ``"babel-preset-env": "1.2.1"``
@@ -77,3 +81,6 @@ Issues with latest Babel-Env plugin, 1.3.2 appears to be causing problems, force
 Electron Forge appears to not be passing electron-packager config details down correctly
 
 ``No Known resolution to this sadly :(``
+
+Warning like: ``MaxListenersExceededWarning: Possible EventEmitter memory leak detected. `` is displayed
+* To fix the above issue update NPM to ``>= 4.4.4`` can be done by doing ``npm update -g npm``
