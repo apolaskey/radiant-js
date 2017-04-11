@@ -7,6 +7,8 @@ import * as dotenv from 'dotenv'; dotenv.config();
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+let awesome = 10;
+
 const createWindow = () => {
     // Must be called first
     if(process.env.NODE_ENV === 'development') {
