@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" type="text/css" href="css/shell.scss"/>
       <link rel="stylesheet" type="text/css" href="css/startLoader.css"/>
+      <link rel="stylesheet" type="text/css" href="css/bubbleBackground.css"/>
   </head>
   <body>
   <div id="boot_loader" class="assembly">
@@ -35,11 +36,20 @@
       // This will grant us access to the template engine globally and ensure it can't be manipulated
       const m = require('mithril');
       import buildApplicationContext from "./main/ApplicationContext";
+
+      function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      let start = performance.now();
       let backgroundBootstrap = new Promise((resolve) => {
-          buildApplicationContext();
-          resolve(true);
+          // Just testing the loader
+          sleep(300).then(() => {
+              buildApplicationContext();
+              resolve(true);
+          });
       }).then((result) => {
-          console.log('Engine successfully bootstrapped')
+          let end = performance.now();
+          console.log(`Editor successfully bootstrapped in ${(end - start) / 1000.0} seconds!`)
       });
   </script>
 </html>

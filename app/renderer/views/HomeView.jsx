@@ -3,9 +3,25 @@ import RadiantView from "./RadiantView";
 import {Injector} from "../../main/bindings/Injector";
 
 export default class HomeView extends RadiantView {
-    render() {
+    view() {
         return (
-            <div>Hello world!</div>
+            <div className="bubble-container">
+                <ul className="bg-bubbles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         )
     }
 }

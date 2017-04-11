@@ -1,11 +1,11 @@
 import { helpers } from 'inversify-vanillajs-helpers';
-import { Container } from 'inversify';
+import { Container, decorate, inject, injectable } from 'inversify';
 import * as reflection from 'reflect-metadata';
 
 class InversifyUtil {
 
     constructor() {
-        console.log('Loading Inversify IoC Containers!');
+        console.log('Loading Inversify IoC Containers...');
         let inversifyContainer = new Container();
         let registeredHelper = helpers.register(inversifyContainer);
         this._container = inversifyContainer;
@@ -21,7 +21,7 @@ class InversifyUtil {
     }
 
     printBindings() {
-        console.log(this._container);
+        console.log('Completed loading of bindings:\n', this._container._bindingDictionary._map);
     }
 }
 
