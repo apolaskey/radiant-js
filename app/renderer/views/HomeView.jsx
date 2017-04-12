@@ -2,6 +2,8 @@
 import RadiantView from "./RadiantView";
 import {Injector} from "../../main/bindings/Injector";
 
+
+
 export default class HomeView extends RadiantView {
     view() {
         return (

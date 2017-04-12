@@ -33,6 +33,7 @@
     <!-- Nothing else required here -->
   </body>
   <script>
+      global.Promise = require('bluebird');
       // This will grant us access to the template engine globally and ensure it can't be manipulated
       const m = require('mithril');
       import buildApplicationContext from "./main/ApplicationContext";
