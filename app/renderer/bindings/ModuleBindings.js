@@ -1,6 +1,6 @@
 'use strict';
 
-import { Injector } from "./Injector"
+import { Injector } from "../../main/bindings/Injector"
 import HelloWorldModule from "../modules/HelloWorldModule";
 import { ControllerBindings } from "./ControllerBindings";
 import { ViewBindings } from "./ViewBindings";

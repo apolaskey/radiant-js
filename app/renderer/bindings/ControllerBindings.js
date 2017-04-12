@@ -1,7 +1,7 @@
 'use strict';
-import { Injector } from "./Injector"
-import HelloWorldController from "../../renderer/controllers/HelloWorldController";
-import RadiantController from "../../renderer/controllers/RadiantController";
+import { Injector } from "../../main/bindings/Injector"
+import HelloWorldController from "../controllers/HelloWorldController";
+import RadiantController from "../controllers/RadiantController";
 
 export const ControllerBindings = {
     RadiantController: { name: 'RadiantController', type: RadiantController },

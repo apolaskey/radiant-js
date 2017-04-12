@@ -1,11 +1,11 @@
 'use strict';
-import { ModuleBindings } from "../main/bindings/ModuleBindings";
-import { Injector } from "../main/bindings/Injector";
+import { Injector } from "../../main/bindings/Injector";
+import { ModuleBindings } from "../bindings/ModuleBindings";
 
 export default function initializeRoutes() {
     console.log('Loading Application Routes...');
 
-    m.route.mode = 'hash'; // Nice HTML5 style of routing
+    m.route.mode = 'path'; // Nice HTML5 style of routing
 
     m.route(document.body, '/home', {
         '/home': new function() {

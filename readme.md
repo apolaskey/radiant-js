@@ -69,7 +69,7 @@ Branching / Merging is Gitflow with two defined core branches
 
 Application "Main" is at ``app/main.js``
 
-Application routing is configured at ``app/renderer/routes.js``
+Application routing is configured at ``app/renderer/editor-routes.js``
 
 # Known Issues
 Issues with latest Babel-Env plugin, 1.3.2 appears to be causing problems, forced to older version until bug is fixed

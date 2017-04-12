@@ -1,7 +1,7 @@
 'use strict';
-import { Injector } from "./Injector"
-import HelloWorldView from "../../renderer/views/HelloWorldView";
-import RadiantView from "../../renderer/views/RadiantView";
+import { Injector } from "../../main/bindings/Injector"
+import HelloWorldView from "../views/HelloWorldView";
+import RadiantView from "../views/RadiantView";
 
 export const ViewBindings = {
     RadiantView: { name: 'RadiantView', type: RadiantView },

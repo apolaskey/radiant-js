@@ -42,11 +42,8 @@
       }
       let start = performance.now();
       let backgroundBootstrap = new Promise((resolve) => {
-          // Just testing the loader
-          sleep(300).then(() => {
-              buildApplicationContext();
-              resolve(true);
-          });
+          buildApplicationContext();
+          resolve(true);
       }).then((result) => {
           let end = performance.now();
           console.log(`Editor successfully bootstrapped in ${(end - start) / 1000.0} seconds!`)
