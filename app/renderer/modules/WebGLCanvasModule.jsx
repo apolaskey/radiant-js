@@ -1,8 +1,7 @@
 'use strict';
 import RadiantModule from "./RadiantModule";
-import * as logger from "winston"
 
-export default class HelloWorldModule extends RadiantModule {
+export default class WebGLCanvasModule extends RadiantModule {
 
     constructor(controller, view) {
         super(controller, view);
