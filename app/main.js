@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import { enableLiveReload } from 'electron-compile';
 import * as dotenv from 'dotenv'; dotenv.config();
-global.Promise = require('bluebird');
+import Promise from 'bluebird'; global.Promise = Promise;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
