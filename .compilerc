@@ -1,0 +1,33 @@
+{
+	"env": {
+
+		"development": {
+			"application/javascript": {
+				"presets": [
+					["env", { "targets": { "electron": "1.6.2" } }],
+					"react"
+				],
+				"plugins": [
+					"transform-async-to-generator",
+					 ["transform-react-jsx", { "pragma": "m" }]
+				],
+				"sourceMaps": "inline"
+			}
+		},
+
+		"production": {
+			"application/javascript": {
+				"presets": [
+					["env", { "targets": { "electron": "1.6.2" } }],
+					"react"
+				],
+				"plugins": [
+                    "transform-async-to-generator",
+                    ["transform-react-jsx", { "pragma": "m" }]
+				],
+				"sourceMaps": "none"
+			}
+		}
+
+	}
+}

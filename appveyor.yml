@@ -1,0 +1,28 @@
+environment:
+  nodejs_version: "6"
+
+platform:
+  - x64
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - node --version
+  - npm --version
+  - npm install
+
+test_script:
+  - npm test
+
+version: 0.0.{build}-{branch}
+pull_requests:
+  do_not_increment_build_number: true
+
+branches:
+  only:
+  - master
+  - stable
+  - latest
+
+skip_tags: true
+clone_depth: 3
+build: off

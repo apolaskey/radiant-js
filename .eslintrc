@@ -1,0 +1,7 @@
+{
+  "comment": "This file only exists at this point to aide with those that use an IDE",
+  "extends": "xo",
+  "rules": {
+    "indent": ["error", 4]
+  }
+}
