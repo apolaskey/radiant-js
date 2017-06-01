@@ -3,5 +3,12 @@
   "extends": "xo",
   "rules": {
     "indent": ["error", 4]
+  },
+  "globals": {
+    "m": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }

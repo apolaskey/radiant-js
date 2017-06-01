@@ -1,5 +1,5 @@
 'use strict';
-import RadiantModule from './RadiantModule';
+import RadiantModule from './radiant-module';
 
 export default class HelloWorldModule extends RadiantModule {
     constructor(controller, view) {

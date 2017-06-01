@@ -3,35 +3,34 @@
   "productName": "Radiant Editor",
   "version": "0.0.1",
   "description": "Javascript Game Editor",
-  "main": "./app/index.js",
   "scripts": {
-    "start": "electron ./dist/electron-renderer.bundle.js",
-    "build": "webpack --config webpack.config.js",
-    "lint": "eslint src",
+    "start": "npm run-script build && electron ./dist/electron-main.bundle.js",
+    "build": "webpack --config ./build-configs/webpack.config.js",
     "test": "xo && ava tests/**/*.test.js"
   },
+  "author": "apolaskey",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/apolaskey/radiant-js.git"
   },
   "keywords": [
     "electron",
-    "mithril"
+    "mithril",
+    "game-editor"
   ],
   "xo": {
-    "space": 4
-  },
-  "author": "apolaskey",
-  "license": "MIT",
-  "config": {
-    "forge": "build-configs/forge.config.js"
+    "space": 4,
+    "envs": ["node", "browser"],
+    "globals": ["m"],
+    "rules": {
+      "no-useless-constructor": "off"
+    }
   },
   "dependencies": {
     "bluebird": "^3.5.0",
     "dotenv": "^4.0.0",
     "firebase": "^3.9.0",
-    "inversify": "^3.3.0",
-    "inversify-vanillajs-helpers": "^2.0.0",
     "mithril": "^1.0.1",
     "reflect-metadata": "^0.1.10",
     "three": "^0.85.2",
@@ -49,6 +48,8 @@
     "eslint-config-xo": "^0.18.2",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
     "spectron": "^3.6.0",
     "webpack": "^2.6.1",
     "xo": "^0.18.2"

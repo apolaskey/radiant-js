@@ -4,13 +4,13 @@ export default class RadiantView {
 
     constructor() {
         if (new.target === RadiantView) {
-            throw 'Cannot construct Abstract instances directly!';
+            throw new Error('Cannot construct Abstract instances directly!');
         }
     }
 
     view(controller) {
         if (controller === undefined) {
-            throw `RadiantView[${this.constructor.name}]: controller() is not defined!`;
+            throw new Error(`RadiantView[${this.constructor.name}]: controller() is not defined!`);
         }
     }
 }

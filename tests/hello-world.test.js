@@ -8,16 +8,7 @@ test('moo will also run', t => {
     t.pass();
 });
 
-test.only('boo will run but not exclusively', t => {
-    t.pass();
-});
-
 // Won't run, no title
-test(t => {
-    t.fail();
-});
-
-// Won't run, no explicit title
-test(t => {
+test('Should not fail no title', t => {
     t.fail();
 });

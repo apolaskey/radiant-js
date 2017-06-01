@@ -8,13 +8,13 @@ export default class RadiantModule {
     constructor(controller, view) {
         // Module checks; in order to be a fully fledged UI component both are required
         if (new.target === RadiantModule) {
-            throw 'Cannot construct Abstract instances directly!';
+            throw new Error('Cannot construct Abstract instances directly!');
         }
         if (controller === undefined) {
-            throw `Module: ${this.constructor.name} attempted to be created with an undefined controller!`;
+            throw new Error(`Module: ${this.constructor.name} attempted to be created with an undefined controller!`);
         }
         if (view === undefined) {
-            throw `Module: ${this.constructor.name} attempted to be created with an undefined view!`;
+            throw new Error(`Module: ${this.constructor.name} attempted to be created with an undefined view!`);
         }
         console.log(`RadiantModule[controller::${controller.constructor.name} view::${view.constructor.name}] loaded!`);
         this._controller = controller;
@@ -23,14 +23,14 @@ export default class RadiantModule {
 
     get controller() {
         if (this._controller === undefined) {
-            throw `RadiantModule[${this.constructor.name}]: controller() is not defined!`;
+            throw new Error(`RadiantModule[${this.constructor.name}]: controller() is not defined!`);
         }
         return this._controller;
     }
 
     get view() {
         if (this._view === undefined) {
-            throw `RadiantModule[${this.constructor.name}]: view() is not defined!`;
+            throw new Error(`RadiantModule[${this.constructor.name}]: view() is not defined!`);
         }
         return this._view.view;
     }
