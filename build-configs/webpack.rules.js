@@ -50,7 +50,7 @@ module.exports = {
     },
     vanillaCssRule: {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ['style-loader', 'css-loader']
     },
     /**
      * Used for SASS CSS Bundling
@@ -58,11 +58,11 @@ module.exports = {
     sassCssRule: {
         test: /\.scss$/,
         use: [{
-            loader: "style-loader"
+            loader: 'style-loader'
         }, {
-            loader: "css-loader"
+            loader: 'css-loader'
         }, {
-            loader: "sass-loader"
+            loader: 'sass-loader'
         }]
     }
 };

@@ -4,7 +4,7 @@
 import {app, BrowserWindow} from 'electron';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
-import htmlLocation from './index.html'
+import htmlLocation from './index.html';
 
 dotenv.config();
 global.Promise = Promise;
