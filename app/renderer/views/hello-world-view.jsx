@@ -1,7 +1,6 @@
-'use strict';
-import RadiantView from "./RadiantView";
+import RadiantView from './radiant-view';
 
-function BubbleBackground() {
+function bubbleBackground() {
     return (
         <div className="bubble-container">
             <ul className="bg-bubbles">
@@ -20,14 +19,14 @@ function BubbleBackground() {
                 <li></li>
             </ul>
         </div>
-    )
+    );
 }
 
 export default class HelloWorldView extends RadiantView {
     view() {
         return (
             <div>
-                {BubbleBackground()}
+                {bubbleBackground()}
             </div>
         );
     }

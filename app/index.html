@@ -4,10 +4,12 @@
       <meta charset="utf-8">
       <title>Radiant Engine</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" type="text/css" href="css/shell.scss"/>
-      <link rel="stylesheet" type="text/css" href="css/startLoader.css"/>
-      <link rel="stylesheet" type="text/css" href="css/bubbleBackground.css"/>
-      <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+      <script>
+          import shell from './css/shell.scss'
+          import startLoader from './css/startLoader.css'
+          import bubbleBackground from './css/bubbleBackground.css'
+          import fontAwesome from './css/font-awesome.min.css'
+      </script>
   </head>
   <body>
       <!-- Default Spinner -->
@@ -34,27 +36,6 @@
       </div>
   </body>
   <script>
-      import m from 'mithril'; global.m = m;
-      import * as firebase from 'firebase';
-      import Promise from 'bluebird'; global.Promise = Promise;
-      import buildApplicationContext from "./main/ApplicationContext";
 
-      let start = performance.now();
-      let backgroundBootstrap = new Promise((resolve) => {
-          buildApplicationContext();
-          resolve(true);
-      }).then((result) => {
-          let end = performance.now();
-          console.log(`Editor successfully bootstrapped in ${(end - start) / 1000.0} seconds!`)
-      });
-
-      firebase.initializeApp({
-          apiKey: "AIzaSyBiPQlerxRAc28_QNnGKMd_uUvZ8_S9zMw",
-          authDomain: "radiant-js.firebaseapp.com",
-          databaseURL: "https://radiant-js.firebaseio.com",
-          projectId: "radiant-js",
-          storageBucket: "radiant-js.appspot.com",
-          messagingSenderId: "1084027934173"
-      });
   </script>
 </html>

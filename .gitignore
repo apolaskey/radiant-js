@@ -1,5 +1,10 @@
+# Project Specific, Language restricted or otherwise
 node_modules
-out
+dist
+
+# IDE Specific
 .idea
+*.iml
+
+# OS Specific
 .DS_Store
-.iml
