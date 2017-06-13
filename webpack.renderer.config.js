@@ -1,12 +1,19 @@
 const path = require('path');
+const webpack = require('webpack');
 const webpackRules = require('./webpack.rules');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     target: 'electron-renderer',
     // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index
-        app: ['../app/index.js']
+        app: [
+            'react-hot-loader/patch',
+            'webpack-dev-server/client?http://localhost:8081/',
+            'webpack/hot/only-dev-server',
+            './app/index.js'
+        ]
     },
     // WebPack Bundler Output location and strategy
     output: {
@@ -16,13 +23,14 @@ module.exports = {
         // Where the bundler magic happens; each rule represents a "transform" of sorts on a file
         rules: [
             webpackRules.fileRule,
-            webpackRules.vanillaCssRule,
-            webpackRules.sassCssRule,
-            webpackRules.babelRule,
-            webpackRules.babelJsxRule
+            webpackRules.bundleCssRule,
+            webpackRules.babelRule
         ]
     },
-    devServer: {
-        contentBase: path.resolve(__dirname, '../app')
-    }
+    resolve: {
+        extensions: ['.ts', '.js', '.json']
+    },
+    plugins: [
+        new ExtractTextPlugin('styles.css')
+    ]
 };

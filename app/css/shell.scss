@@ -1,7 +1,6 @@
 $primaryBackgroundColor: #404456;
 
-html,
-body {
+html > body {
     background-color: $primaryBackgroundColor;
 }
 

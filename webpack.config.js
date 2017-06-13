@@ -13,7 +13,7 @@ targets.forEach(configureTarget);
  */
 function configureTarget(target) {
     target.context = path.resolve(__dirname, './');
-    target.output.path = path.resolve(__dirname, '../dist');
+    target.output.path = path.resolve(__dirname, './dist');
     target.node = {
         __dirname: false,
         __filename: false

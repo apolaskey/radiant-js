@@ -4,7 +4,7 @@ const webpackRules = require('./webpack.rules');
 module.exports = {
     target: 'electron-main',
     entry: {
-        app: ['../app/main.js']
+        app: ['./app/main.js']
     },
     output: {
         filename: 'electron-main.bundle.js'
