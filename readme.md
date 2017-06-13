@@ -38,10 +38,14 @@ The below are global tools that must be installed to build / package this applic
 
 [Ava](https://github.com/avajs/ava) :: ``npm install -g ava``
 
+[Run-All](https://github.com/mysticatea/npm-run-all/blob/master/docs/run-p.md) :: ``npm install -g npm-run-all``
+
 Project Setup :: ``npm install``
 
 ### Build Scripts
-Start application from source :: ``npm start``
+Start application targets :: ``npm start``
+
+Start only Electron target :: ``npm run-script start:electron``
 
 Build application :: ``npm run-script build``
 
