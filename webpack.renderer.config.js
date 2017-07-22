@@ -1,4 +1,5 @@
-const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackRules = require('./webpack.rules');
 
 module.exports = {
@@ -6,7 +7,10 @@ module.exports = {
     // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index
-        app: ['../app/index.js']
+        app: [
+            'react-hot-loader/patch',
+            './app/index.js'
+        ]
     },
     // WebPack Bundler Output location and strategy
     output: {
@@ -16,13 +20,15 @@ module.exports = {
         // Where the bundler magic happens; each rule represents a "transform" of sorts on a file
         rules: [
             webpackRules.fileRule,
-            webpackRules.vanillaCssRule,
-            webpackRules.sassCssRule,
-            webpackRules.babelRule,
-            webpackRules.babelJsxRule
+            webpackRules.bundleCssRule,
+            webpackRules.babelRule
         ]
     },
-    devServer: {
-        contentBase: path.resolve(__dirname, '../app')
-    }
+    plugins: [
+        new ExtractTextPlugin('styles.css'),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.ejs'
+        })
+    ]
 };
