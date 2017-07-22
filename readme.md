@@ -43,9 +43,9 @@ The below are global tools that must be installed to build / package this applic
 Project Setup :: ``npm install``
 
 ### Build Scripts
-Start application targets :: ``npm start``
+Start application in prod mode :: ``npm start``
 
-Start only Electron target :: ``npm run-script start:electron``
+Start application in dev mode :: ``npm run-script start-dev``
 
 Build application :: ``npm run-script build``
 
