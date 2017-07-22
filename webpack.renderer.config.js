@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const webpackRules = require('./webpack.rules');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     target: 'electron-renderer',
@@ -9,9 +10,9 @@ module.exports = {
     entry: {
         // Main App Index
         app: [
-            'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:8081/',
-            'webpack/hot/only-dev-server',
+            //'react-hot-loader/patch',
+            //'webpack-dev-server/client?http://localhost:8081/',
+            //'webpack/hot/only-dev-server',
             './app/index.js'
         ]
     },
@@ -27,10 +28,11 @@ module.exports = {
             webpackRules.babelRule
         ]
     },
-    resolve: {
-        extensions: ['.ts', '.js', '.json']
-    },
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.ejs'
+        })
     ]
 };

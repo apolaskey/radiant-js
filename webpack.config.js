@@ -12,11 +12,26 @@ targets.forEach(configureTarget);
  * @param target WebPack target to modify
  */
 function configureTarget(target) {
+
+    // Root
     target.context = path.resolve(__dirname, './');
+
+    // Output directory
     target.output.path = path.resolve(__dirname, './dist');
+
+    // Node Configuration
     target.node = {
         __dirname: false,
         __filename: false
+    };
+
+    // Where the root of the app is and extensions to focus
+    target.resolve = {
+        extensions: ['.js', '.jsx', '.json'],
+        modules: [
+            path.join(__dirname, 'app'),
+            'node_modules',
+        ],
     };
 }
 

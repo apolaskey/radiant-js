@@ -2,9 +2,9 @@
  * This file is strictly for Electron to act as the mechanism for loading native windows, etc.
  */
 import {app, BrowserWindow} from 'electron';
+import ElectronUtils from 'ElectronUtils'
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
-import htmlLocation from './index.html';
 
 dotenv.config();
 global.Promise = Promise;
@@ -26,7 +26,7 @@ const createWindow = () => {
     }
 
     // Load up just enough HTML to get things started; JSX from here on
-    mainWindow.loadURL(`file://${__dirname}/${htmlLocation}`);
+    mainWindow.loadURL(ElectronUtils.getElectronResource('index.html'));
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {

@@ -11,7 +11,7 @@ module.exports = {
      * Used to find and locate static resources to add them to the bundle
      */
     fileRule: {
-        test: /\.(png|svg|jpg|gif|html|woff|woff2|eot|ttf)$/,
+        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)$/,
         use: [
             'file-loader?name=[name].[ext]'
         ]
@@ -45,9 +45,11 @@ module.exports = {
      */
     bundleCssRule: {
         test: /\.(css|scss|sass)$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-        })
+        use: ['css-hot-loader'].concat(
+            ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'sass-loader']
+            })
+        )
     }
 };
