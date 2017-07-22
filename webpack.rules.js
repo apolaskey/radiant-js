@@ -1,5 +1,5 @@
 /* eslint-disable capitalized-comments,spaced-comment */
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //noinspection WebpackConfigHighlighting
 
 /**

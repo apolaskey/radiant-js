@@ -12,7 +12,6 @@ targets.forEach(configureTarget);
  * @param target WebPack target to modify
  */
 function configureTarget(target) {
-
     // Root
     target.context = path.resolve(__dirname, './');
 
@@ -30,8 +29,8 @@ function configureTarget(target) {
         extensions: ['.js', '.jsx', '.json'],
         modules: [
             path.join(__dirname, 'app'),
-            'node_modules',
-        ],
+            'node_modules'
+        ]
     };
 }
 

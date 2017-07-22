@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * This file is to kick-off the renderer process for Electron (or other GUI)
  */

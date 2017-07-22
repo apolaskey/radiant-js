@@ -32,7 +32,9 @@
       "m"
     ],
     "rules": {
-      "no-useless-constructor": "off"
+      "no-useless-constructor": "off",
+      "import/no-extraneous-dependencies": "off",
+      "import/no-unresolved": "off"
     }
   },
   "dependencies": {
@@ -65,8 +67,11 @@
     "css-loader": "^0.28.4",
     "devtron": "^1.4.0",
     "electron": "^1.6.10",
-    "eslint": "^3.17.1",
+    "eslint": "^3.19.0",
     "eslint-config-xo": "^0.18.2",
+    "eslint-plugin-ava": "^4.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-unicorn": "^2.1.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.29.0",

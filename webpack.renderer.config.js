@@ -1,8 +1,6 @@
-const path = require('path');
-const webpack = require('webpack');
-const webpackRules = require('./webpack.rules');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpackRules = require('./webpack.rules');
 
 module.exports = {
     target: 'electron-renderer',
@@ -10,9 +8,7 @@ module.exports = {
     entry: {
         // Main App Index
         app: [
-            //'react-hot-loader/patch',
-            //'webpack-dev-server/client?http://localhost:8081/',
-            //'webpack/hot/only-dev-server',
+            'react-hot-loader/patch',
             './app/index.js'
         ]
     },

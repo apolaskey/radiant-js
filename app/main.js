@@ -2,7 +2,7 @@
  * This file is strictly for Electron to act as the mechanism for loading native windows, etc.
  */
 import {app, BrowserWindow} from 'electron';
-import ElectronUtils from 'ElectronUtils'
+import ElectronUtils from 'electron-utils';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
 
