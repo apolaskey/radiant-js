@@ -14,7 +14,9 @@ To create a game editor utilizing Javascript and Electron; building ontop of the
 
 # Completed / Planned Feature List
 - [x] Electron Installation and Setup
-- [x] Mithril Framework w/JSX support 
+- [x] React Framework w/Redux support added
+- [ ] React DevTools support added
+- [ ] Electron DevTools support added
 - [x] Babel w/ES6 + 7 support
 - [ ] Spectron (Electron Functional Testing)
 - [x] Ava (Concurrent Test Runner)
@@ -24,6 +26,7 @@ To create a game editor utilizing Javascript and Electron; building ontop of the
 - [ ] Yeoman Scaffolding Support (On Hold)
 - [x] Webpack Integration*
 - [x] Winston Logger Support
+- [ ] Electron Persistent Store Support (Configs)
 
 
 ## Developing
