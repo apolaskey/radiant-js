@@ -20,8 +20,9 @@ To create a game editor utilizing Javascript and Electron; building ontop of the
 - [x] Ava (Concurrent Test Runner)
 - [x] Windows Releases Automated (Appveyor CI)
 - [x] Unix (Linux / OSX) Releases Automated (Travis CI)
+- [ ] Github Release pushes automated
 - [ ] Yeoman Scaffolding Support (On Hold)
-- [x] Webpack Integration
+- [x] Webpack Integration*
 - [x] Winston Logger Support
 
 
@@ -40,16 +41,25 @@ The below are global tools that must be installed to build / package this applic
 
 [Run-All](https://github.com/mysticatea/npm-run-all/blob/master/docs/run-p.md) :: ``npm install -g npm-run-all``
 
-Project Setup :: ``npm install``
+Build Project Setup & Scripts :: ``npm install && npm run build``
 
 ### Build Scripts
 Start application in prod mode :: ``npm start``
 
-Start application in dev mode :: ``npm run-script start-dev``
+Start application in dev mode :: ``npm run start-dev``
 
-Build application :: ``npm run-script build``
+Start electron only :: ``npm run start-dev:electron``
+* Cavaet to this is the bootstrap index.js might get out-of-date since that's not HMR'd
 
-Deploy application :: ``npm run-script deploy``
+Start webpack HMR only :: ``npm run hot``
+
+Build output :: ``npm run build``
+
+Lint source :: ``npm test``
+
+Run integration tests :: ``npm run build && npm run it-test``
+
+Package application :: ``npm run package:${os-type}`` where ``${os-type}`` is "windows", "linux", "osx"
 
 ## Patterns and Practices
 Below are the basic towards how the project is setup and in general just how things work.
@@ -75,6 +85,15 @@ Application "Main" is at ``app/index.js``
 Application routing is configured at ``app/renderer/editor-routes.js``
 
 # Known Issues
+
+Webpack HMR not working for index.ejs or index.js
+* I don't believe it's possible to get around this without jumping through some crazy hoops.
+This is because when launching Electron via the CLI it expects some assets to be available to open
+the main window. For the sake of simplicity this is going to be left alone.
+
+Warning like: ``npm WARN invalid config loglevel="notice"``
+* To fix the above just run ``npm config set loglevel warn`` the above occurs on Windows environments
+running NPM >= 6 due to the newer auto-enabled package-lock.json functionality
 
 Warning like: ``MaxListenersExceededWarning: Possible EventEmitter memory leak detected. `` is displayed
 * To fix the above issue update NPM to ``>= 4.4.4`` can be done by doing ``npm update -g npm``

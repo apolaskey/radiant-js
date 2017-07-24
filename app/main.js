@@ -5,6 +5,10 @@ import {app, BrowserWindow} from 'electron';
 import ElectronUtils from 'electron-utils';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
+import icon from './resources/icon/icon.png';
+import iconOsx from './resources/icon/icon.hqx';
+import manifest from '../package.json';
+import path from 'path';
 
 dotenv.config();
 global.Promise = Promise;
@@ -14,10 +18,13 @@ global.Promise = Promise;
 let mainWindow;
 
 const createWindow = () => {
+    const iconLocation = process.platform !== 'darwin' ? (icon) : (iconOsx);
     // Create the browser window.
     mainWindow = new BrowserWindow({
         width: 1280,
-        height: 720
+        height: 720,
+        backgroundColor: '',
+        icon: path.join(__dirname, iconLocation)
     });
 
     // Quick-hook into devtools; has to be called after the window is setup sadly

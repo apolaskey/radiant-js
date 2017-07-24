@@ -10,6 +10,7 @@ class ElectronUtils {
         }
         return location;
     }
+
 }
 
 export default new ElectronUtils();

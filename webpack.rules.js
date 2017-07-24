@@ -11,7 +11,7 @@ module.exports = {
      * Used to find and locate static resources to add them to the bundle
      */
     fileRule: {
-        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)$/,
+        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|hqx|json)$/,
         use: [
             'file-loader?name=[name].[ext]'
         ]

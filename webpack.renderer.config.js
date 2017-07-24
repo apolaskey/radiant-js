@@ -9,10 +9,13 @@ module.exports = {
         // Main App Index
         app: [
             'react-hot-loader/patch',
-            './app/index.js'
+            './app/index.jsx'
         ]
     },
-    // WebPack Bundler Output location and strategy
+    performance: {
+        hints: 'warning'
+    },
+    // WebPack Bundles Output location and strategy
     output: {
         filename: 'electron-renderer.bundle.js'
     },
@@ -25,9 +28,12 @@ module.exports = {
         ]
     },
     plugins: [
+        // Used to get CSS to export out from WebPack in one global CSS file
         new ExtractTextPlugin('styles.css'),
+        // Used to generate the "index.html" file, name configured by the below param
         new HtmlWebpackPlugin({
             filename: 'index.html',
+            // Ejs template used during the creation, asset management is handled via webpack
             template: 'index.ejs'
         })
     ]

@@ -9,9 +9,12 @@ install:
   - node --version
   - npm --version
   - npm install
+  - npm run-script build
+  - npm run-script package:windows
 
 test_script:
   - npm test
+  - npm run-script it-test
 
 version: 0.0.{build}-{branch}
 pull_requests:

@@ -1,5 +1,5 @@
 div.assembly {
-  color: #ccc;
+  color: white;
 }
 
 div.assembly, div.assembly > *:before {
@@ -28,6 +28,7 @@ div.assembly, div.assembly > *:before {
     transform: scale(0.5);
   }
 }
+
 .hex {
   z-index: -1;
   margin: -4em;
@@ -43,7 +44,7 @@ div.assembly, div.assembly > *:before {
 
 .assembly > .tri:before {
   margin: 0 -2em;
-  border: solid 0;
+  border: solid;
   border-color: currentColor transparent;
   border-width: 3.4641em 2em 0;
   -webkit-animation: up 2s ease-out infinite;
@@ -54,6 +55,10 @@ div.assembly, div.assembly > *:before {
   -webkit-transform: rotate(30deg) translateY(3.4641em);
   transform: rotate(30deg) translateY(3.4641em);
 }
+
+/**
+ * First Triangle
+ */
 .assembly > .tri:nth-child(1):before {
   -webkit-animation-name: up-1;
   animation-name: up-1;
@@ -82,6 +87,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Second Triangle
+ */
 .assembly > .tri:nth-child(2) {
   -webkit-transform: rotate(30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -114,6 +123,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Third Triangle
+ */
 .tri:nth-child(3) {
   -webkit-transform: rotate(30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -146,6 +159,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fourth Triangle
+ */
 .tri:nth-child(4) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em);
   transform: rotate(-30deg) translateY(3.4641em);
@@ -178,6 +195,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fifth Triangle
+ */
 .tri:nth-child(5) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -210,6 +231,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Sixth Triangle
+ */
 .tri:nth-child(6) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -242,6 +267,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Seventh Triangle
+ */
 .tri:nth-child(7) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em);
   transform: rotate(-90deg) translateY(3.4641em);
@@ -274,6 +303,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eighth Triangle
+ */
 .tri:nth-child(8) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-90deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -306,6 +339,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Ninth Triangle
+ */
 .tri:nth-child(9) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-90deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -338,6 +375,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Tenth Triangle
+ */
 .tri:nth-child(10) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em);
   transform: rotate(-150deg) translateY(3.4641em);
@@ -370,6 +411,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eleventh Triangle
+ */
 .tri:nth-child(11) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-150deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -402,6 +447,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Twelfth Triangle
+ */
 .tri:nth-child(12) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-150deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -434,6 +483,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Thirteenth Triangle
+ */
 .tri:nth-child(13) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em);
   transform: rotate(-210deg) translateY(3.4641em);
@@ -466,6 +519,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fourteenth Triangle
+ */
 .tri:nth-child(14) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-210deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -498,6 +555,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fifteenth Triangle
+ */
 .tri:nth-child(15) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-210deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -530,6 +591,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Sixteenth Triangle
+ */
 .tri:nth-child(16) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em);
   transform: rotate(-270deg) translateY(3.4641em);
@@ -562,6 +627,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Seventeenth Triangle
+ */
 .tri:nth-child(17) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-270deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -594,6 +663,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eighteenth Triangle
+ */
 .tri:nth-child(18) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-270deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
