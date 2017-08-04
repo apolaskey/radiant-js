@@ -89,6 +89,14 @@ Application routing is configured at ``app/renderer/editor-routes.js``
 
 # Known Issues
 
+Error Like: ``cross-env not available``
+* To fix run ``npm rebuild`` this is required because your likely carrying project files between multiple
+OS variants
+
+White page when running ``npm run start-dev``
+* This usually happens if the Electron Window is minimized while Webpack is building out the HMR server
+just refresh the page (Ctrl/Cmd R or View -> Reload)
+
 Webpack HMR not working for index.ejs or index.js
 * I don't believe it's possible to get around this without jumping through some crazy hoops.
 This is because when launching Electron via the CLI it expects some assets to be available to open

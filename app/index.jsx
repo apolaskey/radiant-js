@@ -10,15 +10,21 @@ import fontAwesomeStyles from './css/font-awesome.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
-import * as logger from 'winston';
+import { ConnectedRouter } from 'react-router-redux';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { AppContainer } from 'react-hot-loader';
 
-logger.Logger('info', 'Starting React routing sequence...');
+import { configureStore } from './renderer/store/redux-store';
+import Root from './renderer/containers/root-container';
 
-const render = Component => {
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+
+const render = () => {
     ReactDOM.render(
         <AppContainer>
-            <Component/>
+            <Root store={store} history={history}/>
         </AppContainer>,
         document.getElementById('app_root')
     );
