@@ -43,7 +43,7 @@ function configureTarget(target) {
 
     if (process.env.NODE_ENV === 'development') {
         // Configures generation of source-maps; needed for development
-        target.devtool = 'cheap-module-source-map';
+        target.devtool = 'source-map';
         target.plugins.push(new UglifyJSPlugin({
             sourceMap: true,
             parallel: true

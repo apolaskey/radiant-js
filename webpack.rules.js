@@ -12,6 +12,7 @@ module.exports = {
      */
     fileRule: {
         test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|hqx|json)$/,
+        exclude: /node_modules/,
         use: [
             'file-loader?name=[name].[ext]'
         ]
@@ -21,11 +22,12 @@ module.exports = {
      */
     babelRule: {
         test: /\.(js|jsx)$/,
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
         use: [
             {
                 loader: 'babel-loader',
                 options: {
+                    cacheDirectory: true,
                     presets: [
                         ['es2015', {modules: false}],
                         ['react'],
@@ -45,6 +47,7 @@ module.exports = {
      */
     bundleCssRule: {
         test: /\.(css|scss|sass)$/,
+        exclude: /node_modules/,
         use: ['css-hot-loader'].concat(
             ExtractTextPlugin.extract({
                 fallback: 'style-loader',

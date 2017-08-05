@@ -2,6 +2,7 @@
  * This file is strictly for Electron to act as the mechanism for loading native windows, etc.
  */
 import {app, BrowserWindow} from 'electron';
+import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF } from 'electron-devtools-installer';
 import ElectronUtils from 'electron-utils';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
@@ -29,7 +30,17 @@ const createWindow = () => {
 
     // Quick-hook into devtools; has to be called after the window is setup sadly
     if (process.env.NODE_ENV === 'development') {
+        installExtension(REACT_DEVELOPER_TOOLS).then((name) => console.log(`Extension Loaded: ${name}`))
+            .catch((err) => console.log('An error occurred: ', err));
+
+        installExtension(REDUX_DEVTOOLS).then((name) => console.log(`Extension Loaded: ${name}`))
+            .catch((err) => console.log('An error occurred: ', err));
+
+        installExtension(REACT_PERF).then((name) => console.log(`Extension Loaded: ${name}`))
+            .catch((err) => console.log('An error occurred: ', err));
+
         mainWindow.webContents.openDevTools();
+        mainWindow.focus();
     }
 
     // Load up just enough HTML to get things started; JSX from here on

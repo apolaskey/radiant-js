@@ -10,16 +10,12 @@ import fontAwesomeStyles from './css/font-awesome.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ConnectedRouter } from 'react-router-redux';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 
-import { configureStore } from './renderer/store/redux-store';
+import { configureStore, history } from './renderer/store/redux-store';
 import Root from './renderer/containers/root-container';
 
 const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
 
 const render = () => {
     ReactDOM.render(
@@ -33,7 +29,7 @@ const render = () => {
 render(Root);
 
 if (module.hot) {
-    module.hot.accept('./containers/Root', () => {
+    module.hot.accept('./renderer/containers/root-container', () => {
         render(Root);
     });
 }

@@ -1,21 +1,8 @@
-import { Route } from 'react-router-dom';
+import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
-
-import DevTools from 'redux-devtools/src/createDevTools';
+import React from 'react';
 import App from '../components/app';
-
-function devComponents() {
-    if(process.env.NODE_ENV === 'development') {
-        return (
-            <DevTools />
-        )
-    } else {
-        return (
-            <div className="no-op"></div>
-        )
-    }
-}
 
 /**
  * Creates a root node dependent on configuration
@@ -27,10 +14,9 @@ export default function Root({store, history}) {
     return (
         <Provider store = {store}>
             <div>
-                <ConnectedRouter history={history}>
+                <Router history={history}>
                     <Route path="/" component={App} />
-                </ConnectedRouter>
-                {devComponents()}
+                </Router>
             </div>
         </Provider>
     )
