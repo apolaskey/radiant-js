@@ -55,6 +55,7 @@
     "history": "^4.6.3",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.6.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
@@ -96,7 +97,9 @@
     "spectron": "^3.6.0",
     "style-loader": "^0.18.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
+    "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
+    "webpack-build-notifier": "^0.1.16",
     "webpack-dev-server": "^2.4.5",
     "xo": "^0.18.2"
   }

@@ -7,12 +7,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  * @type {{}}
  */
 module.exports = {
+    urlRule: {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [
+            'url-loader'
+        ]
+    },
     /**
      * Used to find and locate static resources to add them to the bundle
      */
     fileRule: {
-        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|hqx|json)$/,
-        exclude: /node_modules/,
+        test: /\.(png|svg|jpg|gif|hqx)$/,
         use: [
             'file-loader?name=[name].[ext]'
         ]
@@ -47,7 +52,6 @@ module.exports = {
      */
     bundleCssRule: {
         test: /\.(css|scss|sass)$/,
-        exclude: /node_modules/,
         use: ['css-hot-loader'].concat(
             ExtractTextPlugin.extract({
                 fallback: 'style-loader',

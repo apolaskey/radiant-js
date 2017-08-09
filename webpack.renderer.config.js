@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const webpackRules = require('./webpack.rules');
 
 module.exports = {
@@ -12,9 +13,6 @@ module.exports = {
             './app/index.jsx'
         ]
     },
-    performance: {
-        hints: 'warning'
-    },
     // WebPack Bundles Output location and strategy
     output: {
         filename: 'electron-renderer.bundle.js'
@@ -23,11 +21,13 @@ module.exports = {
         // Where the bundler magic happens; each rule represents a "transform" of sorts on a file
         rules: [
             webpackRules.fileRule,
+            webpackRules.urlRule,
             webpackRules.bundleCssRule,
             webpackRules.babelRule
         ]
     },
     plugins: [
+        new WebpackBuildNotifierPlugin(),
         // Used to get CSS to export out from WebPack in one global CSS file
         new ExtractTextPlugin('styles.css'),
         // Used to generate the "index.html" file, name configured by the below param
