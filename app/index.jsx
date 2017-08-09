@@ -3,6 +3,7 @@
  * This file is to kick-off the renderer process for Electron (or other GUI)
  */
 import shellStyles from './css/main.scss';
+import manifest from '../package.json';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
