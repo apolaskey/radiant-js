@@ -1,7 +1,7 @@
 import React from 'react';
 import { Position, Toaster } from "@blueprintjs/core";
 
-export const LoaderToast = Toaster.create({
+export const NotificationToaster = Toaster.create({
     className: "loader-toast",
-    position: Position.BOTTOM,
+    position: Position.TOP_RIGHT,
 });
