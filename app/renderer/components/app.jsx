@@ -6,6 +6,7 @@ import {Overlay} from "@blueprintjs/core/dist/components/overlay/overlay";
 import GreetingOverlay from "./overlays/greeting-overlay";
 import { PrimaryToaster } from "./toasts/primary-toaster";
 import {Intent} from "@blueprintjs/core/dist/common/intent";
+import NewProjectDialog from "./dialogs/new-project-dialog";
 
 
 PrimaryToaster.show({
@@ -15,7 +16,7 @@ PrimaryToaster.show({
 });
 const App = () => (
     <div>
-        <GreetingOverlay/>
+        <NewProjectDialog/>
         { Routes }
     </div>
 );

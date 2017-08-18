@@ -49,6 +49,7 @@
   "dependencies": {
     "@blueprintjs/core": "^1.18.0",
     "bluebird": "^3.5.0",
+    "bulma": "^0.5.1",
     "dotenv": "^4.0.0",
     "electron-debug": "^1.1.0",
     "firebase": "^4.1.1",

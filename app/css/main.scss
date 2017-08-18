@@ -1,6 +1,10 @@
 @import "~normalize.css";
 @import "~@blueprintjs/core/dist/blueprint.css";
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/grid/columns";
 @import "./splash-loader.css";
 @import "./bubble-background.css";
 @import "./rainbow-background.css";
 @import "./font-awesome.min.css";
+@import "./utilities.css";
+@import "./bulma-extensions";

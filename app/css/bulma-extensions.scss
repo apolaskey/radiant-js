@@ -1,0 +1,9 @@
+.columns {
+  @extend .columns;
+  margin: 0;
+}
+
+.column {
+  @extend .column;
+  margin: 10px;
+}
