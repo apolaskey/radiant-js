@@ -1,10 +1,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
+const NodeExternals = require('webpack-node-externals');
 const webpackRules = require('./webpack.rules');
 
 module.exports = {
-    target: 'electron-renderer',
+    target: 'web',
     // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index

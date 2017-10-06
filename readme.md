@@ -40,7 +40,9 @@ The below are global tools that must be installed to build / package this applic
 
 [Electron Setup](https://electron.atom.io/) :: ``npm install -g electron``
 
-[Ava](https://github.com/avajs/ava) :: ``npm install -g ava``
+[Ava](https://github.com/avajs/ava) :: ``npm install -g ava``'
+
+[Cross-Env](https://github.com/kentcdodds/cross-env) :: ``npm install --g cross-env``
 
 [Run-All](https://github.com/mysticatea/npm-run-all/blob/master/docs/run-p.md) :: ``npm install -g npm-run-all``
 
@@ -86,6 +88,12 @@ Branching / Merging is Gitflow with two defined core branches
 Application "Main" is at ``app/index.js``
 
 Application routing is configured at ``app/renderer/editor-routes.js``
+
+# Integrated Frameworks / Notable Libraries
+The below frameworks / libraries have been deeply integrated into the project.
+
+* BlueprintJS (Components and Styling)
+* Bulma CSS (CSS Grid + Modular Components)
 
 # Known Issues
 

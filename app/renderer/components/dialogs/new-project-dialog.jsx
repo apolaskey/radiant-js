@@ -22,7 +22,7 @@ export default class NewProjectDialog extends React.Component {
     }
 
     handleOpen = () => {
-        this.state.isOpen = true;
+        this.setState({ isOpen: true });
     };
     handleClose = () => {
         this.setState({ isOpen: false });
@@ -34,13 +34,13 @@ export default class NewProjectDialog extends React.Component {
                 <div className="columns">
                     <div className={`${Classes.CARD} ${Classes.INTERACTIVE} ${Classes.ELEVATION_0} noselect column`}>
                         <h3>
-                            <span className={`${Classes.ICON_LARGE} ${Classes.iconClass("folder-open")}`}> </span>
+                            <span className={`${Classes.ICON_LARGE} ${Classes.iconClass("folder-open")}`}>&nbsp;</span>
                             Open Project
                         </h3>
                     </div>
                     <div className={`${Classes.CARD} ${Classes.INTERACTIVE} ${Classes.ELEVATION_0} noselect column`}>
                         <h3>
-                            <span className={`${Classes.ICON_LARGE} ${Classes.iconClass("new-object")}`}> </span>
+                            <span className={`${Classes.ICON_LARGE} ${Classes.iconClass("new-object")}`}>&nbsp;</span>
                             New Project
                         </h3>
                     </div>

@@ -1,24 +1,33 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Routes from '../routes';
-import {Button} from "@blueprintjs/core/dist/components/button/buttons";
-import {Overlay} from "@blueprintjs/core/dist/components/overlay/overlay";
-import GreetingOverlay from "./overlays/greeting-overlay";
-import { PrimaryToaster } from "./toasts/primary-toaster";
-import {Intent} from "@blueprintjs/core/dist/common/intent";
-import NewProjectDialog from "./dialogs/new-project-dialog";
+import NewProjectDialog from './dialogs/new-project-dialog';
+import {connect} from "react-redux";
+import {fireNotification} from "../actors/notification-actor";
+import {Component} from "react/lib/ReactBaseClasses";
+import {Intent} from "@blueprintjs/core";
 
+export class App extends Component {
 
-PrimaryToaster.show({
-    message: "Started up!",
-    iconName: "cog",
-    intent: Intent.SUCCESS
+    componentDidMount() {
+        this.props.fireNotification({message: 'Welcome!', intent: Intent.PRIMARY}, true);
+    }
+
+    render() {
+        return (
+            <div>
+                <NewProjectDialog/>
+                { Routes }
+            </div>
+        )
+    }
+}
+
+const mapDispatchToProps = {
+    fireNotification,
+};
+
+const mapStateToProps = (state, ownProps) => ({
+    notifier: state,
 });
-const App = () => (
-    <div>
-        <NewProjectDialog/>
-        { Routes }
-    </div>
-);
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -25,8 +25,9 @@ export default class GreetingOverlay extends React.Component {
     }
 
     handleOpen = () => {
-        this.state.isOpen = true;
+        this.setState({ isOpen: false });
     };
+
     handleClose = () => {
         console.log('Closing!');
         this.setState({ isOpen: false });

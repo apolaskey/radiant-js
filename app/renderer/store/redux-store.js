@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {routerMiddleware} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from '../reducers/root-reducer';
 
@@ -14,7 +14,10 @@ function configureProdStore(initialState) {
     return createStore(
         rootReducer,
         initialState,
-        applyMiddleware(middleware)
+        compose(
+            applyMiddleware(middleware),
+            window.devToolsExtension ? window.devToolsExtension() : f => f
+        )
     );
 }
 

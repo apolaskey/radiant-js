@@ -2,23 +2,24 @@
  * This file is strictly for Electron to act as the mechanism for loading native windows, etc.
  */
 import {app, BrowserWindow} from 'electron';
-import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF } from 'electron-devtools-installer';
-import ElectronUtils from 'electron-utils';
+import installExtension, {REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF} from 'electron-devtools-installer';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
+import path from 'path';
+import ElectronUtils from 'electron-utils';
+import appPackage from '../package.json';
 import icon from './resources/icon/icon.png';
 import iconOsx from './resources/icon/icon.hqx';
-import manifest from '../package.json';
-import path from 'path';
 
 dotenv.config();
-global.Promise = Promise;
+//global.Promise = Promise;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 const createWindow = () => {
+    console.log('Creating Electron window with application:', appPackage);
     const iconLocation = process.platform !== 'darwin' ? (icon) : (iconOsx);
     // Create the browser window.
     mainWindow = new BrowserWindow({
@@ -28,23 +29,23 @@ const createWindow = () => {
         icon: path.join(__dirname, iconLocation)
     });
 
+    // Load up just enough HTML to get things started; JSX from here on
+    mainWindow.loadURL(ElectronUtils.getElectronResource('index.html'));
+
     // Quick-hook into devtools; has to be called after the window is setup sadly
     if (process.env.NODE_ENV === 'development') {
-        installExtension(REACT_DEVELOPER_TOOLS).then((name) => console.log(`Extension Loaded: ${name}`))
-            .catch((err) => console.log('An error occurred: ', err));
+        [REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS].forEach(extension => {
+            installExtension(extension, false)
+                .then((name) => console.log(`Added Extension: ${name}`))
+                .catch((err) => console.log('An error occurred: ', err));
+        });
+    }
 
-        installExtension(REDUX_DEVTOOLS).then((name) => console.log(`Extension Loaded: ${name}`))
-            .catch((err) => console.log('An error occurred: ', err));
-
-        installExtension(REACT_PERF).then((name) => console.log(`Extension Loaded: ${name}`))
-            .catch((err) => console.log('An error occurred: ', err));
-
+    // Quick-hook into devtools; has to be called after the window is setup sadly
+    if (process.env.NODE_ENV === 'development') {
         mainWindow.webContents.openDevTools();
         mainWindow.focus();
     }
-
-    // Load up just enough HTML to get things started; JSX from here on
-    mainWindow.loadURL(ElectronUtils.getElectronResource('index.html'));
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {
