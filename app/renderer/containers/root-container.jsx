@@ -17,7 +17,7 @@ import App from '../components/app';
 export default function Root({store, history}) {
     return (
         <Provider store={store}>
-            <div>
+            <div id={"application"}>
                 <Router history={history}>
                     <Route path="/" component={App} />
                 </Router>
