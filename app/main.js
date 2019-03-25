@@ -7,19 +7,17 @@ import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
 import path from 'path';
 import ElectronUtils from 'electron-utils';
-import appPackage from '../package.json';
 import icon from './resources/icon/icon.png';
 import iconOsx from './resources/icon/icon.hqx';
 
 dotenv.config();
-//global.Promise = Promise;
+global.Promise = Promise;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 const createWindow = () => {
-    console.log('Creating Electron window with application:', appPackage);
     const iconLocation = process.platform !== 'darwin' ? (icon) : (iconOsx);
     // Create the browser window.
     mainWindow = new BrowserWindow({

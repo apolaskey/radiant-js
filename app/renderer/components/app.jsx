@@ -1,15 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Routes from '../routes';
 import NewProjectDialog from './dialogs/new-project-dialog';
 import {connect} from "react-redux";
-import {fireNotification} from "../actors/notification-actor";
-import {Component} from "react/lib/ReactBaseClasses";
+import Notifier from "../actors/notification-actor";
 import {Intent} from "@blueprintjs/core";
 
 export class App extends Component {
 
     componentDidMount() {
-        this.props.fireNotification({message: 'Welcome!', intent: Intent.PRIMARY}, true);
+        Notifier({message: '', intent: Intent.PRIMARY}, true);
     }
 
     render() {
@@ -23,11 +22,11 @@ export class App extends Component {
 }
 
 const mapDispatchToProps = {
-    fireNotification,
+    //Notify,
 };
 
 const mapStateToProps = (state, ownProps) => ({
-    notifier: state,
+    //toaster: state,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

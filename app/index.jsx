@@ -5,18 +5,15 @@
 import css from './css/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root'
 
 import {configureStore, history} from './renderer/store/redux-store';
 import Root from './renderer/containers/root-container';
-
-if (process.env.NODE_ENV === 'development') {
-    AppContainer.prototype.unstable_handleError = function (e) {
-        throw e;
-    };
-}
+import {AppContainer} from "react-hot-loader";
 
 let store = configureStore();
+
+console.log(module);
 
 const render = () => {
     console.log('Loaded application styles:', css !== undefined);
@@ -30,8 +27,6 @@ const render = () => {
 
 render(Root);
 
-if (module.hot) {
-    module.hot.accept('./renderer/containers/root-container', () => {
-        render(Root);
-    });
-}
+hot(() => {
+    render(Root);
+});
