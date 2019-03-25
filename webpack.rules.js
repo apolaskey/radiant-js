@@ -25,7 +25,26 @@ module.exports = {
     /**
      * Used to find and locate js files to be babelified with ES2017+
      */
-    babelRule: {
+    babelMainRule: {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true,
+                    presets: [
+                        ['@babel/preset-env'],
+                        ['@babel/preset-react']
+                    ],
+                    plugins: [
+                        ['@babel/plugin-proposal-class-properties']
+                    ]
+                }
+            }
+        ]
+    },
+    babelRendererRule: {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
@@ -44,6 +63,11 @@ module.exports = {
                 }
             }
         ]
+    },
+    reactHotPatchRule: {
+        test: /\.jsx?$/,
+        include: /node_modules/,
+        use: ['react-hot-loader/webpack']
     },
     /**
      * Used for SASS CSS Bundling
