@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             webpackRules.fileRule,
-            webpackRules.babelRule
+            webpackRules.babelMainRule
         ]
     }
 };

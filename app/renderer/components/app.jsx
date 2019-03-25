@@ -7,14 +7,19 @@ import {Intent} from "@blueprintjs/core";
 
 export class App extends Component {
 
+    constructor() {
+        super();
+    }
+
     componentDidMount() {
-        Notifier({message: '', intent: Intent.PRIMARY}, true);
+        Notifier({message: '⚙️ Engine bootstrapped successfully 👌', intent: Intent.PRIMARY}, true);
     }
 
     render() {
         return (
             <div>
-                <NewProjectDialog/>
+                <NewProjectDialog>
+                </NewProjectDialog>
                 { Routes }
             </div>
         )

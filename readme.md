@@ -4,7 +4,7 @@
 [![Dependencies](https://david-dm.org/apolaskey/radiant-js.svg)](https://david-dm.org/apolaskey/radiant-js#info=dependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/dev-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=devDependencies)
 [![img](https://david-dm.org/apolaskey/radiant-js/peer-status.svg)](https://david-dm.org/apolaskey/radiant-js/#info=peerDependenciess)
-[![Known Vulnerabilities](https://snyk.io/test/github/apolaskey/radiant-js/badge.svg)](https://snyk.io/test/github/apolaskey/radiant-js)
+[![Known Vulnerabilities](https://snyk.io/test/github/apolaskey/radiant-js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/apolaskey/radiant-js?targetFile=package.json)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Unix Status](https://travis-ci.org/apolaskey/radiant-js.svg?branch=master)](https://travis-ci.org/apolaskey/radiant-js)
 [![Windows Status](https://ci.appveyor.com/api/projects/status/4fnobuo3n4adrkit?svg=true&retina=true&branch=master)](https://ci.appveyor.com/project/AndrewPolaskey/radiant-js)
