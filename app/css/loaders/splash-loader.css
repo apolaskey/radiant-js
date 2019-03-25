@@ -1,9 +1,90 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2.7em;
+    margin-left: -2.7em;
+    width: 5.4em;
+    height: 5.4em;
+    background-color: #404456;
+}
+
+.loader > .hill {
+    position: absolute;
+    width: 7.1em;
+    height: 7.1em;
+    top: 1.7em;
+    left: 1.7em;
+    background-color: transparent;
+    border-left: .25em solid whitesmoke;
+    transform: rotate(45deg);
+}
+
+.loader > .hill:after {
+    content: '';
+    position: absolute;
+    width: 7.1em;
+    height: 7.1em;
+    left: 0;
+    background-color: #404456;
+}
+
+.loader > .box {
+    position: absolute;
+    left: 0;
+    bottom: -.1em;
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border: .25em solid whitesmoke;
+    border-radius: 15%;
+    transform: translate(0, -1em) rotate(-45deg);
+    animation: loader-push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+}
+
+@keyframes loader-push {
+    0% {
+        transform: translate(0, -1em) rotate(-45deg);
+    }
+    5% {
+        transform: translate(0, -1em) rotate(-50deg);
+    }
+    20% {
+        transform: translate(1em, -2em) rotate(47deg);
+    }
+    25% {
+        transform: translate(1em, -2em) rotate(45deg);
+    }
+    30% {
+        transform: translate(1em, -2em) rotate(40deg);
+    }
+    45% {
+        transform: translate(2em, -3em) rotate(137deg);
+    }
+    50% {
+        transform: translate(2em, -3em) rotate(135deg);
+    }
+    55% {
+        transform: translate(2em, -3em) rotate(130deg);
+    }
+    70% {
+        transform: translate(3em, -4em) rotate(217deg);
+    }
+    75% {
+        transform: translate(3em, -4em) rotate(220deg);
+    }
+    100% {
+        transform: translate(0, -1em) rotate(-225deg);
+    }
+}
+
 div.assembly {
-  color: #ccc;
+  color: white;
 }
 
 div.assembly, div.assembly > *:before {
-  position: absolute;
+  position: fixed;
+  z-index: -1;
   top: 50%;
   left: 50%;
 }
@@ -28,6 +109,7 @@ div.assembly, div.assembly > *:before {
     transform: scale(0.5);
   }
 }
+
 .hex {
   z-index: -1;
   margin: -4em;
@@ -43,7 +125,7 @@ div.assembly, div.assembly > *:before {
 
 .assembly > .tri:before {
   margin: 0 -2em;
-  border: solid 0;
+  border: solid;
   border-color: currentColor transparent;
   border-width: 3.4641em 2em 0;
   -webkit-animation: up 2s ease-out infinite;
@@ -54,6 +136,10 @@ div.assembly, div.assembly > *:before {
   -webkit-transform: rotate(30deg) translateY(3.4641em);
   transform: rotate(30deg) translateY(3.4641em);
 }
+
+/**
+ * First Triangle
+ */
 .assembly > .tri:nth-child(1):before {
   -webkit-animation-name: up-1;
   animation-name: up-1;
@@ -82,6 +168,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Second Triangle
+ */
 .assembly > .tri:nth-child(2) {
   -webkit-transform: rotate(30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -114,6 +204,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Third Triangle
+ */
 .tri:nth-child(3) {
   -webkit-transform: rotate(30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -146,6 +240,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fourth Triangle
+ */
 .tri:nth-child(4) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em);
   transform: rotate(-30deg) translateY(3.4641em);
@@ -178,6 +276,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fifth Triangle
+ */
 .tri:nth-child(5) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-30deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -210,6 +312,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Sixth Triangle
+ */
 .tri:nth-child(6) {
   -webkit-transform: rotate(-30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-30deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -242,6 +348,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Seventh Triangle
+ */
 .tri:nth-child(7) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em);
   transform: rotate(-90deg) translateY(3.4641em);
@@ -274,6 +384,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eighth Triangle
+ */
 .tri:nth-child(8) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-90deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -306,6 +420,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Ninth Triangle
+ */
 .tri:nth-child(9) {
   -webkit-transform: rotate(-90deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-90deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -338,6 +456,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Tenth Triangle
+ */
 .tri:nth-child(10) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em);
   transform: rotate(-150deg) translateY(3.4641em);
@@ -370,6 +492,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eleventh Triangle
+ */
 .tri:nth-child(11) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-150deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -402,6 +528,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Twelfth Triangle
+ */
 .tri:nth-child(12) {
   -webkit-transform: rotate(-150deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-150deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -434,6 +564,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Thirteenth Triangle
+ */
 .tri:nth-child(13) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em);
   transform: rotate(-210deg) translateY(3.4641em);
@@ -466,6 +600,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fourteenth Triangle
+ */
 .tri:nth-child(14) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-210deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -498,6 +636,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Fifteenth Triangle
+ */
 .tri:nth-child(15) {
   -webkit-transform: rotate(-210deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-210deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
@@ -530,6 +672,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Sixteenth Triangle
+ */
 .tri:nth-child(16) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em);
   transform: rotate(-270deg) translateY(3.4641em);
@@ -562,6 +708,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Seventeenth Triangle
+ */
 .tri:nth-child(17) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
   transform: rotate(-270deg) translateY(3.4641em) translate(2em, 3.4641em) rotate(0.5turn);
@@ -594,6 +744,10 @@ div.assembly, div.assembly > *:before {
     transform: scale(1);
   }
 }
+
+/**
+ * Eighteenth Triangle
+ */
 .tri:nth-child(18) {
   -webkit-transform: rotate(-270deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);
   transform: rotate(-270deg) translateY(3.4641em) translate(4em, 0em) rotate(0turn);

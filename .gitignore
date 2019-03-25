@@ -1,6 +1,10 @@
 # Project Specific, Language restricted or otherwise
 node_modules
-dist
+/dist
+/releases
+
+# For now let's ignore this since it's really really early on
+package-lock.json
 
 # IDE Specific
 .idea

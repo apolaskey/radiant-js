@@ -1,5 +1,5 @@
 /* eslint-disable capitalized-comments,spaced-comment */
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //noinspection WebpackConfigHighlighting
 
 /**
@@ -7,11 +7,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  * @type {{}}
  */
 module.exports = {
+    urlRule: {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [
+            'url-loader'
+        ]
+    },
     /**
      * Used to find and locate static resources to add them to the bundle
      */
     fileRule: {
-        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)$/,
+        test: /\.(png|svg|jpg|gif|hqx|json)$/,
         use: [
             'file-loader?name=[name].[ext]'
         ]
@@ -21,20 +27,19 @@ module.exports = {
      */
     babelRule: {
         test: /\.(js|jsx)$/,
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
         use: [
             {
                 loader: 'babel-loader',
                 options: {
+                    cacheDirectory: true,
                     presets: [
-                        ['es2015', {modules: false}],
-                        ['react'],
-                        ['stage-0']
+                        ['@babel/preset-env'],
+                        ['@babel/preset-react']
                     ],
                     plugins: [
-                        ['react-hot-loader/babel'],
-                        ['transform-runtime'],
-                        ['transform-react-jsx']
+                        ['@babel/plugin-proposal-class-properties'],
+                        ['react-hot-loader/babel']
                     ]
                 }
             }
@@ -45,11 +50,13 @@ module.exports = {
      */
     bundleCssRule: {
         test: /\.(css|scss|sass)$/,
-        use: ['css-hot-loader'].concat(
-            ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: ['css-loader', 'sass-loader']
-            })
-        )
+        use: [
+            MiniCssExtractPlugin.loader,
+            {
+                loader: "css-loader",
+                options: { }
+            },
+            "sass-loader"
+        ]
     }
 };
