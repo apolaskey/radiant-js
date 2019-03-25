@@ -1,9 +1,9 @@
 import {createStore, applyMiddleware, compose} from 'redux';
 import {routerMiddleware} from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import {createBrowserHistory} from 'history';
 import rootReducer from '../reducers/root-reducer';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 const middleware = routerMiddleware(history);
 
 /**
@@ -16,7 +16,7 @@ function configureProdStore(initialState) {
         initialState,
         compose(
             applyMiddleware(middleware),
-            window.devToolsExtension ? window.devToolsExtension() : f => f
+            window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
         )
     );
 }

@@ -10,7 +10,6 @@ module.exports = {
     entry: {
         // Main App Index
         app: [
-            'react-hot-loader/patch',
             './app/index.jsx'
         ]
     },
@@ -24,7 +23,8 @@ module.exports = {
             webpackRules.fileRule,
             webpackRules.urlRule,
             webpackRules.bundleCssRule,
-            webpackRules.babelRule
+            webpackRules.babelRendererRule,
+            webpackRules.reactHotPatchRule
         ]
     },
     devServer: {
