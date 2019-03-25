@@ -1,5 +1,4 @@
 import {Position, Toaster} from '@blueprintjs/core';
-import {Intent} from '@blueprintjs/core/dist/common/intent';
 
 const SEND_PRIMARY_NOTIFICATION = 'Notifier.SEND_PRIMARY_NOTIFICATION';
 const SEND_SECONDARY_NOTIFICATION = 'Notifier.SEND_SECONDARY_NOTIFICATION';
@@ -14,35 +13,27 @@ const notificationToaster = Toaster.create({
     position: Position.TOP_RIGHT
 });
 
-const firePrimaryNotifcation = function (notification) {
-    return primaryToaster.show(notification);
-};
-
-const fireSecondaryNotification = function (notification) {
-    return notificationToaster.show(notification);
-};
-
-export const fireNotification = function(message, isPriority = false) {
-    if(isPriority) {
-        return {
-            type: SEND_PRIMARY_NOTIFICATION,
-            notification: message
-        }
-    } else {
-        return {
-            type: SEND_SECONDARY_NOTIFICATION,
-            notification: message
-        }
+const showPrimaryNotification = function (notification) {
+    return {
+        type: SEND_PRIMARY_NOTIFICATION,
+        toastId: primaryToaster.show(notification)
     }
 };
 
-export default function Notifier(state = {}, action) {
-    switch(action.type) {
-        case SEND_PRIMARY_NOTIFICATION:
-            return firePrimaryNotifcation(action.notification);
-        case SEND_SECONDARY_NOTIFICATION:
-            return fireSecondaryNotification(action.notification);
-        default:
-            return state;
+const showSecondaryNotification = function (notification) {
+    return {
+        type: SEND_SECONDARY_NOTIFICATION,
+        toastId: notificationToaster.show(notification)
+    }
+};
+
+// Reducer
+export default function Notifier(state = {}, isPrimary) {
+    if(isPrimary === true) {
+        return showPrimaryNotification(state);
+    } else if(isPrimary === false) {
+        return showSecondaryNotification(state);
+    } else {
+        return state;
     }
 }

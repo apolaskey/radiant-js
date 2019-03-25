@@ -3,7 +3,7 @@ const NodeExternals = require('webpack-node-externals');
 const webpackRules = require('./webpack.rules');
 
 module.exports = {
-    target: 'electron',
+    target: 'electron-main',
     externals: [NodeExternals()],
     entry: {
         app: ['./app/main.js']
