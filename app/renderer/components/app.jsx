@@ -18,9 +18,8 @@ export class App extends Component {
     render() {
         return (
             <div>
-                <NewProjectDialog>
-                </NewProjectDialog>
-                { Routes }
+                <NewProjectDialog/>
+                <Routes/>
             </div>
         )
     }
