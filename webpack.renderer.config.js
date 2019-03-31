@@ -6,10 +6,9 @@ const webpack = require('webpack');
 
 module.exports = {
     target: 'electron-renderer',
-    // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index
-        app: './app/index.jsx'
+        app: ['react-hot-loader/patch', './app/index.jsx']
     },
     // WebPack Bundles Output location and strategy
     output: {

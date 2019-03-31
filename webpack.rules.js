@@ -1,8 +1,5 @@
 /* eslint-disable capitalized-comments,spaced-comment */
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const transform_jsx = require('@babel/plugin-transform-react-jsx');
-const class_properties = require('@babel/plugin-proposal-class-properties');
-const transform_typescript = require('@babel/plugin-transform-typescript');
 //noinspection WebpackConfigHighlighting
 
 /**

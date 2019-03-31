@@ -12,7 +12,7 @@ export class App extends Component {
     }
 
     componentDidMount() {
-        Notifier({message: '⚙️ Engine bootstrapped successfully 👌', intent: Intent.PRIMARY}, true);
+        Notifier({message: '⚙ Engine bootstrapped successfully 👌', intent: Intent.PRIMARY}, true);
     }
 
     render() {

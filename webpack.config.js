@@ -1,6 +1,5 @@
 /* eslint-disable import/newline-after-import */
 const webpack = require('webpack');
-const webpack_cli = require('webpack-cli');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
@@ -45,6 +44,7 @@ function configureTarget(target) {
     if (process.env.NODE_ENV === 'development') {
         // Configures generation of source-maps; needed for development
         target.devtool = 'source-map';
+        target.mode = 'development';
         /* Target.plugins.push(new UglifyJSPlugin({
             sourceMap: true,
             parallel: true
