@@ -24,6 +24,7 @@ export default class NewProjectDialog extends React.Component {
     handleOpen = () => {
         this.setState({ isOpen: true });
     };
+
     handleClose = () => {
         this.setState({ isOpen: false });
     };

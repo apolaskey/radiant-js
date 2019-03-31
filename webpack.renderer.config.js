@@ -9,9 +9,7 @@ module.exports = {
     // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index
-        app: [
-            './app/index.jsx'
-        ]
+        app: './app/index.jsx'
     },
     // WebPack Bundles Output location and strategy
     output: {
@@ -26,10 +24,6 @@ module.exports = {
             webpackRules.babelRendererRule,
             webpackRules.reactHotPatchRule
         ]
-    },
-    devServer: {
-        contentBase: './app/index.jsx',
-        hot: true
     },
     plugins: [
         new WebpackBuildNotifierPlugin(),

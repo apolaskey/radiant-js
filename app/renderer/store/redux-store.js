@@ -1,10 +1,9 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import {routerMiddleware} from 'react-router-redux';
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import { routerMiddleware } from 'connected-react-router'
 import {createBrowserHistory} from 'history';
 import rootReducer from '../reducers/root-reducer';
 
 export const history = createBrowserHistory();
-const middleware = routerMiddleware(history);
 
 /**
  * Store setup when running in prod-mode
@@ -12,10 +11,10 @@ const middleware = routerMiddleware(history);
  */
 function configureProdStore(initialState) {
     return createStore(
-        rootReducer,
+        rootReducer(history),
         initialState,
         compose(
-            applyMiddleware(middleware),
+            applyMiddleware(routerMiddleware),
             window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
         )
     );
