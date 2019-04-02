@@ -2,20 +2,22 @@
  * This file is strictly for Electron to act as the mechanism for loading native windows, etc.
  */
 import {app, BrowserWindow} from 'electron';
-import installExtension, {REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF} from 'electron-devtools-installer';
+import installExtension, {REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS} from 'electron-devtools-installer';
 import * as dotenv from 'dotenv';
 import Promise from 'bluebird';
-import path from 'path';
-import ElectronUtils from 'electron-utils';
-import icon from './resources/icon/icon.png';
-import iconOsx from './resources/icon/icon.hqx';
+import * as path from 'path';
+import ElectronUtils from './utilities/electron-utils';
+// @ts-ignore
+import icon from '../resources/icon/icon.png';
+// @ts-ignore
+import iconOsx from '../resources/icon/icon.hqx';
 
 dotenv.config();
 global.Promise = Promise;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow: BrowserWindow;
 
 const createWindow = () => {
     const iconLocation = process.platform !== 'darwin' ? (icon) : (iconOsx);

@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 // This is used to basically run common defaults onto multiple webpack configs; Electron has two targets
 const targets = [
@@ -29,7 +30,7 @@ function configureTarget(target) {
 
     // Where the root of the app is and extensions to focus
     target.resolve = {
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
         modules: [
             path.join(__dirname, 'app'),
             'node_modules'
@@ -51,6 +52,9 @@ function configureTarget(target) {
         })); */
         // Logs to console the full path of HMR files
         target.plugins.push(new webpack.NamedModulesPlugin());
+        target.plugins.push(new ForkTsCheckerWebpackPlugin({
+            tslint: false
+        }))
     } else {
         // Production minification of code
         target.plugins.push(new UglifyJSPlugin({

@@ -3,12 +3,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const webpackRules = require('./webpack.rules');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
+    watch: true,
+    devServer: {
+        inline: true,
+        overlay: {
+            warnings: true,
+            errors: true
+        },
+        contentBase: path.join(__dirname, 'dist'),
+        watchContentBase: true,
+        historyApiFallback: false
+    },
     target: 'electron-renderer',
     entry: {
         // Main App Index
-        app: ['react-hot-loader/patch', './app/index.jsx']
+        app: ['./app/renderer/app-index.tsx']
     },
     // WebPack Bundles Output location and strategy
     output: {

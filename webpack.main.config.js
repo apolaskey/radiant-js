@@ -6,7 +6,7 @@ module.exports = {
     target: 'electron-main',
     externals: [NodeExternals()],
     entry: {
-        app: './app/main.js'
+        app: './app/main/app-shell.ts'
     },
     output: {
         filename: 'electron-main.bundle.js'
