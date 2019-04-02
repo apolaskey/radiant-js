@@ -26,7 +26,7 @@ module.exports = {
      * Used to find and locate js files to be babelified with ES2017+
      */
     babelMainRule: {
-        test: /\.(js)$/,
+        test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
         use: [
             {
@@ -35,7 +35,7 @@ module.exports = {
                     cacheDirectory: true,
                     presets: [
                         ['@babel/preset-env'],
-                        ['@babel/preset-react']
+                        ['@babel/preset-typescript']
                     ],
                     plugins: [
                         ['@babel/plugin-proposal-class-properties']
@@ -45,7 +45,7 @@ module.exports = {
         ]
     },
     babelRendererRule: {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: [
             {
@@ -54,6 +54,7 @@ module.exports = {
                     cacheDirectory: true,
                     presets: [
                         ['@babel/preset-env'],
+                        ['@babel/preset-typescript'],
                         ['@babel/preset-react']
                     ],
                     plugins: [
@@ -65,7 +66,7 @@ module.exports = {
         ]
     },
     reactHotPatchRule: {
-        test: /\.jsx?$/,
+        test: /\.([jt])sx?$/,
         include: /node_modules/,
         use: ['react-hot-loader/webpack']
     },
@@ -75,12 +76,13 @@ module.exports = {
     bundleCssRule: {
         test: /\.(css|scss|sass)$/,
         use: [
+            'css-hot-loader',
             MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: { }
             },
-            "sass-loader"
+            'sass-loader'
         ]
     }
 };

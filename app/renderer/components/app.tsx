@@ -8,11 +8,11 @@ import {Intent} from "@blueprintjs/core";
 export class App extends Component {
 
     constructor() {
-        super();
+        super({});
     }
 
     componentDidMount() {
-        Notifier({message: '⚙️ Engine bootstrapped successfully 👌', intent: Intent.PRIMARY}, true);
+        Notifier({message: '⚙ Engine bootstrapped successfully 👌', intent: Intent.PRIMARY}, true);
     }
 
     render() {
@@ -29,7 +29,7 @@ const mapDispatchToProps = {
     //Notify,
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state: any, ownProps: any) => ({
     //toaster: state,
 });
 

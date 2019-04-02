@@ -3,15 +3,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const webpackRules = require('./webpack.rules');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
+    watch: true,
+    devServer: {
+        inline: true,
+        overlay: {
+            warnings: true,
+            errors: true
+        },
+        contentBase: path.join(__dirname, 'dist'),
+        watchContentBase: true,
+        historyApiFallback: false
+    },
     target: 'electron-renderer',
-    // WebPack Entry Scanner; starts looking through all the modules to pull in from this point
     entry: {
         // Main App Index
-        app: [
-            './app/index.jsx'
-        ]
+        app: ['./app/renderer/app-index.tsx']
     },
     // WebPack Bundles Output location and strategy
     output: {
@@ -26,10 +35,6 @@ module.exports = {
             webpackRules.babelRendererRule,
             webpackRules.reactHotPatchRule
         ]
-    },
-    devServer: {
-        contentBase: './app/index.jsx',
-        hot: true
     },
     plugins: [
         new WebpackBuildNotifierPlugin(),

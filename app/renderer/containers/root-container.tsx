@@ -2,7 +2,7 @@
  * This file outlines the root of the application before any component has officially rendered.
  * Think "Main Container" where your actual application is rendered as a child to this.
  */
-import {Router, Route} from 'react-router';
+import {Router, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -14,7 +14,7 @@ import App from '../components/app';
  * @param history
  * @constructor
  */
-export default function Root({store, history}) {
+export default function Root({store, history}:any) {
     return (
         <Provider store={store}>
             <div id={"application"}>
