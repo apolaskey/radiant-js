@@ -20,7 +20,9 @@
     "package:linux": "npm run package:prebuild && electron-packager ./dist --overwrite --platform=linux --arch=x64 --icon=app/resources/icon/icon.png --prune=true --out=releases",
     "test": "xo && ava tests/**/*.test.js",
     "it-test": "ava tests/integration/**/*.test.js",
-    "uplift": "rimraf package-lock.json && npm install && npm-check -u"
+    "uplift": "rimraf package-lock.json && npm install && npm-check -u",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "apolaskey",
   "license": "MIT",
@@ -67,7 +69,8 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "three": "^0.102.1",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.0",
@@ -111,5 +114,6 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-node-externals": "^1.7.2",
     "xo": "^0.24.0"
-  }
+  },
+  "snyk": true
 }
