@@ -52,7 +52,7 @@
     "bulma": "^0.7.4",
     "dotenv": "^7.0.0",
     "electron-debug": "^2.1.0",
-    "firebase": "^5.9.1",
+    "firebase": "^7.22.0",
     "history": "^4.9.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
